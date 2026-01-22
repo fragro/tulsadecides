@@ -36,3 +36,4 @@ end
 group :production do
 end
 gem "twilio-ruby", "~> 7.0"
+gem 'sidekiq'

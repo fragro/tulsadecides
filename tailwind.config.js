@@ -1,0 +1,91 @@
+// TulsaDecides Custom Tailwind Configuration
+// Based on official Tulsa Flag colors
+
+const { inherit, current, transparent, white, neutral } = require("tailwindcss/colors")
+
+const withOpacity =
+  (variable) =>
+  ({ opacityValue }) =>
+    opacityValue === undefined
+      ? `rgb(var(${variable}))`
+      : `rgb(var(${variable}) / ${opacityValue})`;
+
+module.exports = {
+  content: ['/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-core-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-comments-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-accountability-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-admin-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-api-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-assemblies-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-blogs-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-budgets-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-debates-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-forms-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-generators-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-meetings-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-pages-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-participatory_processes-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-proposals-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-sortitions-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-surveys-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-system-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-verifications-0.31.0','/root/.rbenv/versions/3.3.4/lib/ruby/gems/3.3.0/gems/decidim-dev-0.31.0','.'].flatMap(directory => [
+    `${directory}/app/views/**/*.html.erb`,
+    `${directory}/app/cells/**/*.{rb,erb}`,
+    `${directory}/app/helpers/**/*.rb`,
+    `${directory}/app/packs/**/*.js`,
+    `${directory}/lib/**/*.rb`
+  ]),
+  theme: {
+    colors: {
+      inherit,
+      current,
+      transparent,
+      white,
+      neutral,
+      // Decidim dynamic colors (from organization settings)
+      primary: withOpacity("--primary-rgb"),
+      secondary: withOpacity("--secondary-rgb"),
+      tertiary: withOpacity("--tertiary-rgb"),
+      
+      // Tulsa specific colors for direct use
+      tulsa: {
+        blue: "#162B49",
+        cream: "#F8F1E0", 
+        gold: "#EBAD21",
+        red: "#C6202E"
+      },
+      
+      // Status colors (using Tulsa palette)
+      success: "#28A745",
+      alert: "#C6202E",
+      warning: "#EBAD21",
+      
+      black: "#020203",
+      gray: {
+        DEFAULT: "#6B7280CC",
+        2: "#3E4C5C",
+        3: "#E1E5EF",
+        4: "#242424",
+        5: "#F6F8FA",
+        6: "#D3D5D9"
+      },
+      background: {
+        DEFAULT: "#F3F4F7",
+        2: "#FAFBFC",
+        3: "#EFEFEF",
+        4: "#E4EEFF99",
+        5: "#E9E9E9"
+      }
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+        lg: "4rem"
+      }
+    },
+    fontFamily: {
+      sans: ["Source Sans Pro", "ui-sans-serif", "system-ui", "sans-serif"]
+    },
+    fontSize: {
+      xs: ["13px", "16px"],
+      sm: ["14px", "18px"],
+      md: ["16px", "20px"],
+      lg: ["18px", "23px"],
+      xl: ["20px", "25px"],
+      "2xl": ["24px", "30px"],
+      "3xl": ["32px", "40px"],
+      "4xl": ["36px", "45px"],
+      "5xl": ["48px", "60px"]
+    },
+    extend: {
+      transitionProperty: {
+        "top": "top",
+      }
+    }
+  },
+  plugins: [require("@tailwindcss/typography")]
+}

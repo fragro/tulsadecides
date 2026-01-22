@@ -1,0 +1,10 @@
+---
+:concurrency: 5
+:queues:
+  - [mailers, 3]
+  - [default, 2]
+  - [exports, 1]
+  - [translations, 1]
+  - [events, 2]
+  - [block_user, 1]
+  - [user_report, 1]
