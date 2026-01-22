@@ -208,7 +208,7 @@
   
   <div class="chart-row">
     <div class="chart-container">
-      <h3>Budget by Category</h3>
+      <h3>Spending by Department</h3>
       <canvas id="budgetPieChart"></canvas>
     </div>
     <div class="chart-container">
@@ -218,67 +218,51 @@
   </div>
 
   <!-- Budget Breakdown Table -->
-  <h2>Budget Breakdown by Category</h2>
+    <h2>Budget Breakdown by Department</h2>
   
   <table class="budget-table">
     <thead>
       <tr>
-        <th>Category</th>
+        <th>Department / Program</th>
         <th>Amount</th>
         <th>% of Total</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><strong>Public Safety</strong><br><small>Police, Fire, Emergency Services, Courts</small></td>
-        <td class="amount">$306.6M</td>
-        <td class="percent">27.4%</td>
-      </tr>
-      <tr>
-        <td><strong>Utilities</strong><br><small>Water, Sewer, Treatment & Distribution</small></td>
-        <td class="amount">$250.9M</td>
-        <td class="percent">22.5%</td>
-      </tr>
-      <tr>
-        <td><strong>Capital Programs</strong><br><small>Voter-approved Sales Tax Projects</small></td>
-        <td class="amount">$107.9M</td>
-        <td class="percent">9.7%</td>
-      </tr>
-      <tr>
-        <td><strong>Infrastructure</strong><br><small>Streets, Stormwater, Solid Waste</small></td>
-        <td class="amount">$106.4M</td>
-        <td class="percent">9.5%</td>
-      </tr>
-      <tr>
-        <td><strong>Parks & Recreation</strong><br><small>Parks, Trails, Zoo, Museums, Arts</small></td>
-        <td class="amount">$60.5M</td>
-        <td class="percent">5.4%</td>
-      </tr>
-      <tr>
-        <td><strong>Economic Development</strong><br><small>Tourism, Downtown, Venues, Events</small></td>
-        <td class="amount">$34.3M</td>
-        <td class="percent">3.1%</td>
-      </tr>
-      <tr>
-        <td><strong>Transit</strong><br><small>Bus Service, Paratransit</small></td>
-        <td class="amount">$15.0M</td>
-        <td class="percent">1.3%</td>
-      </tr>
-      <tr>
-        <td><strong>Planning & Development</strong><br><small>Permits, Zoning, Community Development</small></td>
-        <td class="amount">$12.7M</td>
-        <td class="percent">1.1%</td>
-      </tr>
-      <tr>
-        <td><strong>Housing & Community</strong><br><small>Housing Programs, Code Enforcement</small></td>
-        <td class="amount">$10.0M</td>
-        <td class="percent">0.9%</td>
-      </tr>
-      <tr>
-        <td><strong>Community Services</strong><br><small>Animal Services, Equity Programs</small></td>
-        <td class="amount">$5.8M</td>
-        <td class="percent">0.5%</td>
-      </tr>
+      <tr><td><strong>Tulsa Police Department</strong><br><small>Law enforcement, 911 dispatch, 941 sworn officers, 2 academies</small></td><td class="amount">$165.8M</td><td class="percent">14.8%</td></tr>
+      <tr><td><strong>Tulsa Fire Department</strong><br><small>Fire suppression, EMS, hazmat, 752 personnel</small></td><td class="amount">$129.8M</td><td class="percent">11.6%</td></tr>
+      <tr><td><strong>Water Supply and Treatment</strong><br><small>Mohawk and A.B. Jewell plants, distribution system</small></td><td class="amount">$114.2M</td><td class="percent">10.2%</td></tr>
+      <tr><td><strong>2023 Improve Our Tulsa III</strong><br><small>Voter-approved capital: streets, parks, public safety</small></td><td class="amount">$77.8M</td><td class="percent">7.0%</td></tr>
+      <tr><td><strong>Wastewater Treatment</strong><br><small>4 treatment plants, sewer collection system</small></td><td class="amount">$72.4M</td><td class="percent">6.5%</td></tr>
+      <tr><td><strong>Sewer Infrastructure Capital</strong><br><small>Line rehabilitation, plant improvements, capacity</small></td><td class="amount">$40.2M</td><td class="percent">3.6%</td></tr>
+      <tr><td><strong>Refuse and Recycling</strong><br><small>Trash collection, recycling, illegal dumping enforcement</small></td><td class="amount">$38.5M</td><td class="percent">3.4%</td></tr>
+      <tr><td><strong>Street Maintenance and Traffic</strong><br><small>Street repair, traffic signals, crossing guards</small></td><td class="amount">$35.0M</td><td class="percent">3.1%</td></tr>
+      <tr><td><strong>Stormwater Management</strong><br><small>Flood control, drainage, MS4 compliance</small></td><td class="amount">$32.8M</td><td class="percent">2.9%</td></tr>
+      <tr><td><strong>Vision Tulsa Economic Development</strong><br><small>2016 voter-approved capital projects</small></td><td class="amount">$30.1M</td><td class="percent">2.7%</td></tr>
+      <tr><td><strong>Water Infrastructure Capital</strong><br><small>Main replacements, plant upgrades</small></td><td class="amount">$24.2M</td><td class="percent">2.2%</td></tr>
+      <tr><td><strong>Parks Capital Improvements</strong><br><small>Facility upgrades, trail extensions, playgrounds</small></td><td class="amount">$22.0M</td><td class="percent">2.0%</td></tr>
+      <tr><td><strong>BOK Center and Convention Center</strong><br><small>Arena and convention center operations</small></td><td class="amount">$21.8M</td><td class="percent">2.0%</td></tr>
+      <tr><td><strong>Parks and Recreation</strong><br><small>135 parks, 57 mi trails, 5 pools, 7 centers</small></td><td class="amount">$15.8M</td><td class="percent">1.4%</td></tr>
+      <tr><td><strong>Metropolitan Tulsa Transit (MTTA)</strong><br><small>Fixed-route bus, MicroLink, paratransit</small></td><td class="amount">$15.0M</td><td class="percent">1.3%</td></tr>
+      <tr><td><strong>Development Services</strong><br><small>Building permits, inspections, plan review</small></td><td class="amount">$8.6M</td><td class="percent">0.8%</td></tr>
+      <tr><td><strong>Tulsa Zoo</strong><br><small>Operations, animal care, conservation</small></td><td class="amount">$7.6M</td><td class="percent">0.7%</td></tr>
+      <tr><td><strong>EMSA</strong><br><small>Ambulance and advanced life support</small></td><td class="amount">$6.76M</td><td class="percent">0.6%</td></tr>
+      <tr><td><strong>Golf Courses</strong><br><small>Page Belcher and Mohawk</small></td><td class="amount">$5.1M</td><td class="percent">0.5%</td></tr>
+      <tr><td><strong>Housing and Homelessness</strong><br><small>Transitional housing, grants, 5-year $75M commitment</small></td><td class="amount">$5.0M</td><td class="percent">0.4%</td></tr>
+      <tr><td><strong>Gilcrease Museum</strong><br><small>Collections, exhibitions</small></td><td class="amount">$4.9M</td><td class="percent">0.4%</td></tr>
+      <tr><td><strong>Visit Tulsa and Tourism</strong><br><small>Marketing, visitor services</small></td><td class="amount">$4.5M</td><td class="percent">0.4%</td></tr>
+      <tr><td><strong>Animal Services</strong><br><small>Shelter operations, new shelter under construction</small></td><td class="amount">$4.2M</td><td class="percent">0.4%</td></tr>
+      <tr><td><strong>Municipal Court</strong><br><small>Adjudication, public defender services</small></td><td class="amount">$3.9M</td><td class="percent">0.4%</td></tr>
+      <tr><td><strong>Quality Events and Tourism District</strong><br><small>Major event attraction, TID services</small></td><td class="amount">$3.8M</td><td class="percent">0.3%</td></tr>
+      <tr><td><strong>Code Enforcement</strong><br><small>Property maintenance, nuisance abatement</small></td><td class="amount">$3.5M</td><td class="percent">0.3%</td></tr>
+      <tr><td><strong>Performing Arts Center</strong><br><small>PAC operations and programming</small></td><td class="amount">$3.0M</td><td class="percent">0.3%</td></tr>
+      <tr><td><strong>Economic Development Office</strong><br><small>Business attraction, TAEO oversight</small></td><td class="amount">$2.6M</td><td class="percent">0.2%</td></tr>
+      <tr><td><strong>Planning Office</strong><br><small>Zoning, comprehensive plan, TMAPC</small></td><td class="amount">$2.5M</td><td class="percent">0.2%</td></tr>
+      <tr><td><strong>River Parks Authority</strong><br><small>River trails, Turkey Mountain</small></td><td class="amount">$2.1M</td><td class="percent">0.2%</td></tr>
+      <tr><td><strong>Downtown Tulsa Partnership</strong><br><small>Maintenance, safety ambassadors</small></td><td class="amount">$1.7M</td><td class="percent">0.1%</td></tr>
+      <tr><td><strong>Resilience and Equity</strong><br><small>Equity initiatives, Financial Empowerment Center</small></td><td class="amount">$1.6M</td><td class="percent">0.1%</td></tr>
+      <tr><td><strong>Community Development (HUD)</strong><br><small>CDBG, HOME programs</small></td><td class="amount">$1.6M</td><td class="percent">0.1%</td></tr>
+      <tr><td><strong>Right-of-Way Cleanup</strong><br><small>Dedicated cleanup crews</small></td><td class="amount">$1.5M</td><td class="percent">0.1%</td></tr>
     </tbody>
   </table>
 
@@ -364,17 +348,17 @@
 <!-- Chart.js Initialization -->
 <script>
 (function() {
-  // Budget Pie Chart
-  const pieCtx = document.getElementById("budgetPieChart");
+  var pieCtx = document.getElementById("budgetPieChart");
   if (pieCtx) {
     new Chart(pieCtx, {
       type: "doughnut",
       data: {
-        labels: ["Public Safety", "Utilities", "Capital Programs", "Infrastructure", "Parks & Rec", "Economic Dev", "Other"],
+        labels: ["Police", "Fire", "Water", "Improve Our Tulsa III", "Sewer", "Sewer Capital", "Refuse", "Streets", "Stormwater", "Vision Tulsa", "BOK/Convention", "Water Capital", "Parks Capital", "Parks Ops", "Transit", "Other"],
         datasets: [{
-          data: [306.6, 250.9, 107.9, 106.4, 60.5, 34.3, 43.5],
-          backgroundColor: ["#DC3545", "#0D6EFD", "#FD7E14", "#6C757D", "#198754", "#FFC107", "#6F42C1"],
-          borderWidth: 0
+          data: [165.8, 129.8, 114.2, 77.8, 72.4, 40.2, 38.5, 35.0, 32.8, 30.1, 21.8, 24.2, 22.0, 15.8, 15.0, 81.7],
+          backgroundColor: ["#DC3545", "#E35D6A", "#0D6EFD", "#FD7E14", "#3D8BFD", "#6EA8FE", "#6C757D", "#ADB5BD", "#20C997", "#E8A317", "#FFC107", "#0DCAF0", "#198754", "#479F76", "#6F42C1", "#D63384"],
+          borderWidth: 1,
+          borderColor: "#fff"
         }]
       },
       options: {
@@ -382,12 +366,14 @@
         plugins: {
           legend: {
             position: "bottom",
-            labels: { padding: 15, usePointStyle: true }
+            labels: { padding: 12, usePointStyle: true, font: { size: 11 } }
           },
           tooltip: {
             callbacks: {
               label: function(context) {
-                return context.label + ": $" + context.raw + "M";
+                var total = context.dataset.data.reduce(function(a, b) { return a + b; }, 0);
+                var pct = ((context.raw / total) * 100).toFixed(1);
+                return context.label + ": $" + context.raw + "M (" + pct + "%)";
               }
             }
           }
@@ -395,18 +381,16 @@
       }
     });
   }
-
-  // Revenue Bar Chart
-  const barCtx = document.getElementById("revenueBarChart");
+  var barCtx = document.getElementById("revenueBarChart");
   if (barCtx) {
     new Chart(barCtx, {
       type: "bar",
       data: {
-        labels: ["Sales Tax", "Water", "Property Tax", "Use Tax", "Sewer", "Stormwater"],
+        labels: ["Sales Tax", "Water Rev", "Property Tax", "Use Tax", "Sewer Rev", "Stormwater", "Refuse Fees", "Franchise/ROW", "Interest", "Event/Venue"],
         datasets: [{
           label: "Revenue (Millions)",
-          data: [354.2, 114.2, 93.5, 76.8, 72.4, 55.9],
-          backgroundColor: ["#162B49", "#0D6EFD", "#6C757D", "#EBAD21", "#0D6EFD", "#20C997"],
+          data: [354.2, 114.2, 93.5, 76.8, 72.4, 55.9, 40.6, 31.9, 31.9, 25.0],
+          backgroundColor: ["#162B49", "#0D6EFD", "#6C757D", "#EBAD21", "#3D8BFD", "#20C997", "#ADB5BD", "#FD7E14", "#198754", "#FFC107"],
           borderRadius: 4
         }]
       },
