@@ -363,7 +363,7 @@
 
 <!-- Chart.js Initialization -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+(function() {
   // Budget Pie Chart
   const pieCtx = document.getElementById("budgetPieChart");
   if (pieCtx) {
@@ -436,5 +436,5 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
-});
+})();
 </script>
