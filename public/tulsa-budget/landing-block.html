@@ -1,0 +1,111 @@
+<!-- TulsaDecides Budget Landing Page Block -->
+<style>
+  .tulsa-budget-intro {
+    background: linear-gradient(135deg, #162B49 0%, #1e3a5f 100%);
+    border-radius: 12px;
+    padding: 2.5rem;
+    color: white;
+    margin: 2rem 0;
+  }
+  .tulsa-budget-intro h2 {
+    color: #F8F1E0;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .tulsa-budget-intro .budget-amount {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #EBAD21;
+    margin: 1.5rem 0;
+  }
+  .tulsa-budget-intro p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+  }
+  .tulsa-budget-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .tulsa-budget-stat {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+  }
+  .tulsa-budget-stat .stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #EBAD21;
+  }
+  .tulsa-budget-stat .stat-label {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-top: 0.25rem;
+  }
+  .tulsa-budget-cta {
+    display: inline-block;
+    background: #EBAD21;
+    color: #162B49;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 1.5rem;
+    transition: all 0.2s;
+  }
+  .tulsa-budget-cta:hover {
+    background: #F8F1E0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  .budget-icon {
+    width: 48px;
+    height: 48px;
+  }
+</style>
+
+<div class="tulsa-budget-intro">
+  <h2>
+    <svg class="budget-icon" viewBox="0 0 24 24" fill="none" stroke="#EBAD21" stroke-width="2">
+      <rect x="2" y="3" width="20" height="18" rx="2"/>
+      <path d="M12 8v8M8 12h8"/>
+    </svg>
+    Your City. Your Budget. Your Voice.
+  </h2>
+  
+  <div class="budget-amount">$1.117 Billion</div>
+  
+  <p>
+    For the first time, Tulsans can engage directly with how our city invests over one billion dollars annually. 
+    Explore the FY2025-2026 municipal budget, understand where your tax dollars go, and participate in shaping our shared future.
+  </p>
+  
+  <div class="tulsa-budget-stats">
+    <div class="tulsa-budget-stat">
+      <div class="stat-value">$306.6M</div>
+      <div class="stat-label">Public Safety</div>
+    </div>
+    <div class="tulsa-budget-stat">
+      <div class="stat-value">$250.9M</div>
+      <div class="stat-label">Utilities</div>
+    </div>
+    <div class="tulsa-budget-stat">
+      <div class="stat-value">$107.9M</div>
+      <div class="stat-label">Capital Projects</div>
+    </div>
+    <div class="tulsa-budget-stat">
+      <div class="stat-value">$106.4M</div>
+      <div class="stat-label">Infrastructure</div>
+    </div>
+  </div>
+  
+  <a href="/pages/tulsa-municipal-budget" class="tulsa-budget-cta">
+    Explore the Full Budget →
+  </a>
+</div>

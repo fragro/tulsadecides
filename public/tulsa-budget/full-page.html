@@ -1,0 +1,440 @@
+<!-- TulsaDecides Full Budget Page Content -->
+<!-- Include Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+<style>
+  .budget-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: inherit;
+  }
+  .budget-page h1 {
+    color: #162B49;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .budget-page .subtitle {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  .budget-page h2 {
+    color: #162B49;
+    font-size: 1.75rem;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #EBAD21;
+  }
+  .budget-page h3 {
+    color: #162B49;
+    font-size: 1.3rem;
+    margin: 1.5rem 0 0.75rem;
+  }
+  .budget-hero {
+    background: linear-gradient(135deg, #162B49 0%, #1e3a5f 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .budget-hero h1 {
+    color: #F8F1E0;
+    margin-bottom: 1rem;
+  }
+  .budget-hero .total {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #EBAD21;
+    margin: 1rem 0;
+  }
+  .budget-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .chart-container {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  .chart-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  @media (max-width: 768px) {
+    .chart-row {
+      grid-template-columns: 1fr;
+    }
+  }
+  .budget-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  .budget-table th {
+    background: #162B49;
+    color: white;
+    padding: 1rem;
+    text-align: left;
+  }
+  .budget-table td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  .budget-table tr:hover td {
+    background: #f8f9fa;
+  }
+  .budget-table .amount {
+    font-weight: 600;
+    color: #162B49;
+  }
+  .budget-table .percent {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  .highlight-box {
+    background: #F8F1E0;
+    border-left: 4px solid #EBAD21;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .highlight-box strong {
+    color: #162B49;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .stat-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-top: 4px solid #EBAD21;
+  }
+  .stat-card .value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #162B49;
+  }
+  .stat-card .label {
+    color: #666;
+    margin-top: 0.5rem;
+  }
+  .cta-section {
+    background: linear-gradient(135deg, #162B49 0%, #1e3a5f 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 3rem 0;
+  }
+  .cta-section h2 {
+    color: #F8F1E0;
+    border: none;
+    margin-bottom: 1rem;
+  }
+  .cta-section p {
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+  }
+  .cta-button {
+    display: inline-block;
+    background: #EBAD21;
+    color: #162B49;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0.5rem;
+    transition: all 0.2s;
+  }
+  .cta-button:hover {
+    background: #F8F1E0;
+    transform: translateY(-2px);
+  }
+  .cta-button.secondary {
+    background: transparent;
+    border: 2px solid #F8F1E0;
+    color: #F8F1E0;
+  }
+  .cta-button.secondary:hover {
+    background: #F8F1E0;
+    color: #162B49;
+  }
+</style>
+
+<div class="budget-page">
+  <!-- Hero Section -->
+  <div class="budget-hero">
+    <h1>Tulsa FY2025-2026 Municipal Budget</h1>
+    <div class="total">$1.117 Billion</div>
+    <p>Your tax dollars fund essential services from public safety to parks. Explore how Tulsa invests in our community and have your say in shaping our future.</p>
+  </div>
+
+  <!-- Key Stats -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="value">8.1%</div>
+      <div class="label">Increase from FY25</div>
+    </div>
+    <div class="stat-card">
+      <div class="value">4,500+</div>
+      <div class="label">City Employees</div>
+    </div>
+    <div class="stat-card">
+      <div class="value">$354M</div>
+      <div class="label">Sales Tax Revenue</div>
+    </div>
+    <div class="stat-card">
+      <div class="value">10</div>
+      <div class="label">Major Departments</div>
+    </div>
+  </div>
+
+  <!-- Charts Section -->
+  <h2>Where Does the Money Go?</h2>
+  <p>The budget is divided across essential city services. Public Safety and Utilities together account for nearly half of all spending.</p>
+  
+  <div class="chart-row">
+    <div class="chart-container">
+      <h3>Budget by Category</h3>
+      <canvas id="budgetPieChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <h3>Revenue Sources</h3>
+      <canvas id="revenueBarChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Budget Breakdown Table -->
+  <h2>Budget Breakdown by Category</h2>
+  
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>% of Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Public Safety</strong><br><small>Police, Fire, Emergency Services, Courts</small></td>
+        <td class="amount">$306.6M</td>
+        <td class="percent">27.4%</td>
+      </tr>
+      <tr>
+        <td><strong>Utilities</strong><br><small>Water, Sewer, Treatment & Distribution</small></td>
+        <td class="amount">$250.9M</td>
+        <td class="percent">22.5%</td>
+      </tr>
+      <tr>
+        <td><strong>Capital Programs</strong><br><small>Voter-approved Sales Tax Projects</small></td>
+        <td class="amount">$107.9M</td>
+        <td class="percent">9.7%</td>
+      </tr>
+      <tr>
+        <td><strong>Infrastructure</strong><br><small>Streets, Stormwater, Solid Waste</small></td>
+        <td class="amount">$106.4M</td>
+        <td class="percent">9.5%</td>
+      </tr>
+      <tr>
+        <td><strong>Parks & Recreation</strong><br><small>Parks, Trails, Zoo, Museums, Arts</small></td>
+        <td class="amount">$60.5M</td>
+        <td class="percent">5.4%</td>
+      </tr>
+      <tr>
+        <td><strong>Economic Development</strong><br><small>Tourism, Downtown, Venues, Events</small></td>
+        <td class="amount">$34.3M</td>
+        <td class="percent">3.1%</td>
+      </tr>
+      <tr>
+        <td><strong>Transit</strong><br><small>Bus Service, Paratransit</small></td>
+        <td class="amount">$15.0M</td>
+        <td class="percent">1.3%</td>
+      </tr>
+      <tr>
+        <td><strong>Planning & Development</strong><br><small>Permits, Zoning, Community Development</small></td>
+        <td class="amount">$12.7M</td>
+        <td class="percent">1.1%</td>
+      </tr>
+      <tr>
+        <td><strong>Housing & Community</strong><br><small>Housing Programs, Code Enforcement</small></td>
+        <td class="amount">$10.0M</td>
+        <td class="percent">0.9%</td>
+      </tr>
+      <tr>
+        <td><strong>Community Services</strong><br><small>Animal Services, Equity Programs</small></td>
+        <td class="amount">$5.8M</td>
+        <td class="percent">0.5%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Highlight Box -->
+  <div class="highlight-box">
+    <strong>New This Year:</strong> The Department of Resilience & Equity now operates independently with $1.6M for equity initiatives, human rights work, and the Financial Empowerment Center. Animal Services is also now a standalone department with a new shelter under construction.
+  </div>
+
+  <!-- Revenue Section -->
+  <h2>Where Does the Money Come From?</h2>
+  <p>Sales tax is the citys primary revenue source, followed by utility fees and property taxes.</p>
+  
+  <table class="budget-table">
+    <thead>
+      <tr>
+        <th>Revenue Source</th>
+        <th>FY26 Projection</th>
+        <th>% of Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Sales Tax</strong><br><small>3.65% on retail sales within city</small></td>
+        <td class="amount">$354.2M</td>
+        <td class="percent">31.5%</td>
+      </tr>
+      <tr>
+        <td><strong>Water Revenue</strong><br><small>Water supply and distribution charges</small></td>
+        <td class="amount">$114.2M</td>
+        <td class="percent">10.2%</td>
+      </tr>
+      <tr>
+        <td><strong>Ad Valorem Tax</strong><br><small>Property tax for debt service</small></td>
+        <td class="amount">$93.5M</td>
+        <td class="percent">8.3%</td>
+      </tr>
+      <tr>
+        <td><strong>Use Tax</strong><br><small>Tax on online/out-of-city purchases</small></td>
+        <td class="amount">$76.8M</td>
+        <td class="percent">6.8%</td>
+      </tr>
+      <tr>
+        <td><strong>Sewer Revenue</strong><br><small>Wastewater collection and treatment</small></td>
+        <td class="amount">$72.4M</td>
+        <td class="percent">6.4%</td>
+      </tr>
+      <tr>
+        <td><strong>Stormwater Fees</strong><br><small>Drainage facility maintenance</small></td>
+        <td class="amount">$55.9M</td>
+        <td class="percent">5.0%</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <strong>Key Trend:</strong> Use tax (collected on online purchases) grew 11.1% this year as shopping habits continue shifting online. This now represents $76.8 million in annual revenue.
+  </div>
+
+  <!-- CTA Section -->
+  <div class="cta-section">
+    <h2>Have Your Say</h2>
+    <p>This is your opportunity to participate in how Tulsa invests in our future. Explore proposals, submit your ideas, and vote on community priorities.</p>
+    <a href="/processes" class="cta-button">View Active Processes</a>
+    <a href="/assemblies" class="cta-button secondary">Join an Assembly</a>
+  </div>
+
+  <!-- FAQ -->
+  <h2>Frequently Asked Questions</h2>
+  
+  <h3>When does the fiscal year begin?</h3>
+  <p>July 1, 2025. The budget runs through June 30, 2026.</p>
+  
+  <h3>Who approves the final budget?</h3>
+  <p>The Tulsa City Council reviews, amends, and approves the Mayors proposed budget each spring.</p>
+  
+  <h3>How can I provide feedback?</h3>
+  <p>Beyond this platform, you can attend City Council budget hearings, contact your District Councilor, or reach out to the Finance Department directly.</p>
+  
+  <h3>Where can I find more detail?</h3>
+  <p>The complete FY2025-26 budget documents are available at <a href="https://www.cityoftulsa.org/budget" target="_blank">cityoftulsa.org/budget</a></p>
+</div>
+
+<!-- Chart.js Initialization -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Budget Pie Chart
+  const pieCtx = document.getElementById("budgetPieChart");
+  if (pieCtx) {
+    new Chart(pieCtx, {
+      type: "doughnut",
+      data: {
+        labels: ["Public Safety", "Utilities", "Capital Programs", "Infrastructure", "Parks & Rec", "Economic Dev", "Other"],
+        datasets: [{
+          data: [306.6, 250.9, 107.9, 106.4, 60.5, 34.3, 43.5],
+          backgroundColor: ["#DC3545", "#0D6EFD", "#FD7E14", "#6C757D", "#198754", "#FFC107", "#6F42C1"],
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: "bottom",
+            labels: { padding: 15, usePointStyle: true }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return context.label + ": $" + context.raw + "M";
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // Revenue Bar Chart
+  const barCtx = document.getElementById("revenueBarChart");
+  if (barCtx) {
+    new Chart(barCtx, {
+      type: "bar",
+      data: {
+        labels: ["Sales Tax", "Water", "Property Tax", "Use Tax", "Sewer", "Stormwater"],
+        datasets: [{
+          label: "Revenue (Millions)",
+          data: [354.2, 114.2, 93.5, 76.8, 72.4, 55.9],
+          backgroundColor: ["#162B49", "#0D6EFD", "#6C757D", "#EBAD21", "#0D6EFD", "#20C997"],
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        indexAxis: "y",
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return "$" + context.raw + "M";
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            beginAtZero: true,
+            ticks: {
+              callback: function(value) {
+                return "$" + value + "M";
+              }
+            }
+          }
+        }
+      }
+    });
+  }
+});
+</script>
