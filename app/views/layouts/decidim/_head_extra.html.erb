@@ -234,47 +234,4 @@
   }
 </style>
 
-<!-- Budget Page Content Injection -->
-<style>
-  body.budget-page main.layout-1col {
-    max-width: 100% !important;
-    width: 100% !important;
-    padding: 0 2rem !important;
-  }
-  body.budget-page .page__container {
-    max-width: 1100px !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    text-align: left !important;
-  }
-  body.budget-page .cols-6 {
-    grid-column: 1 / -1 !important;
-    max-width: 100% !important;
-  }
-</style>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  if (window.location.pathname === "/pages/tulsa-municipal-budget") {
-    document.body.classList.add("budget-page");
-    var contentArea = document.querySelector(".page__container");
-    if (contentArea) {
-      fetch("/tulsa-budget/full-page.html")
-        .then(function(response) { return response.text(); })
-        .then(function(html) {
-          contentArea.innerHTML = html;
-          var chartScript = document.createElement("script");
-          chartScript.src = "https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js";
-          chartScript.onload = function() {
-            var inlineScripts = contentArea.querySelectorAll("script:not([src])");
-            inlineScripts.forEach(function(s) {
-              var newScript = document.createElement("script");
-              newScript.textContent = s.textContent;
-              document.body.appendChild(newScript);
-            });
-          };
-          document.head.appendChild(chartScript);
-        });
-    }
-  }
-});
-</script>
+<!-- Budget Page Content Injection --><script>document.addEventListener("DOMContentLoaded", function() {  if (window.location.pathname === "/pages/tulsa-municipal-budget") {    var mainEl = document.querySelector("main.layout-1col");    var contentArea = document.querySelector(".page__container");    if (contentArea) {      if (mainEl) {        mainEl.style.maxWidth = "100%";        mainEl.style.width = "100%";        mainEl.style.gridColumn = "1 / -1";        mainEl.className = "layout-1col";      }      contentArea.style.maxWidth = "1100px";      contentArea.style.width = "100%";      contentArea.style.margin = "0 auto";      contentArea.style.textAlign = "left";      contentArea.style.padding = "0 1.5rem";      fetch("/tulsa-budget/full-page.html")        .then(function(response) { return response.text(); })        .then(function(html) {          contentArea.innerHTML = html;          var chartScript = document.createElement("script");          chartScript.src = "https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js";          chartScript.onload = function() {            var inlineScripts = contentArea.querySelectorAll("script:not([src])");            inlineScripts.forEach(function(s) {              var newScript = document.createElement("script");              newScript.textContent = s.textContent;              document.body.appendChild(newScript);            });          };          document.head.appendChild(chartScript);        });    }  }});</script>
