@@ -1,0 +1,27 @@
+# TulsaDecides Custom Locale - American Date Format
+# Overrides Decidim's European date format (DD/MM/YYYY) with American (MM/DD/YYYY)
+
+en:
+  date:
+    formats:
+      decidim_short: "%m/%d/%Y"
+      decidim_short_dashed: "%m-%d-%Y"
+      decidim_short_with_month_name_short: "%b %d, %Y"
+      decidim_with_day_and_month_name: "%A, %B %d, %Y"
+      decidim_with_month_name: "%B %d, %Y"
+      decidim_with_month_name_short: "%b %d"
+      default: "%m/%d/%Y"
+      long: "%B %d, %Y"
+      short: "%b %d"
+      help:
+        date_format: 'Format: mm/dd/yyyy'
+      order: m-d-y
+      separator: "/"
+  time:
+    formats:
+      decidim_short: "%m/%d/%Y %H:%M"
+      default: "%m/%d/%Y %H:%M"
+      long: "%B %d, %Y %H:%M"
+      short: "%m/%d/%Y %H:%M"
+      help:
+        time_format: 'Format: hh:mm'

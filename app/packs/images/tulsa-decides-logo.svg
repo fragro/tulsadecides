@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80">
+  <!-- Speech bubble outline -->
+  <path d="M10 10 h240 a10 10 0 0 1 10 10 v35 a10 10 0 0 1 -10 10 h-180 l-15 15 v-15 h-45 a10 10 0 0 1 -10 -10 v-35 a10 10 0 0 1 10 -10 z" 
+        fill="none" 
+        stroke="#162B49" 
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  
+  <!-- TulsaDecides text -->
+  <text x="140" y="42" 
+        font-family="Source Sans Pro, Arial, sans-serif" 
+        font-size="24" 
+        font-weight="700"
+        fill="#162B49" 
+        text-anchor="middle" 
+        dominant-baseline="middle">TulsaDecides</text>
+</svg>

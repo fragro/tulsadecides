@@ -1,0 +1,180 @@
+// TulsaDecides Custom Styles
+// Based on Official Tulsa Flag Colors
+//
+// Primary (Blue): #162B49
+// Secondary (Cream): #F8F1E0  
+// Accent (Gold): #EBAD21
+// Accent (Red): #C6202E
+
+// Tulsa color variables
+$tulsa-blue: #162B49;
+$tulsa-cream: #F8F1E0;
+$tulsa-gold: #EBAD21;
+$tulsa-red: #C6202E;
+
+// Title decorator fix - ensure readable on dark backgrounds
+.title-decorator {
+  color: $tulsa-cream !important;
+  
+  &.inline-block {
+    color: $tulsa-cream !important;
+  }
+}
+
+// Any element with title-decorator class
+[class*="title-decorator"] {
+  color: $tulsa-cream !important;
+}
+
+// Fix text on primary/blue backgrounds
+.bg-primary,
+[class*="bg-primary"] {
+  color: $tulsa-cream !important;
+  
+  h1, h2, h3, h4, h5, h6, p, span, a, label {
+    color: $tulsa-cream !important;
+  }
+}
+
+// Gold buttons must have WHITE text
+.bg-tertiary,
+[class*="bg-tertiary"],
+.bg-warning,
+[class*="bg-warning"] {
+  color: white !important;
+}
+
+// Override focus states
+*:focus {
+  outline-color: $tulsa-gold !important;
+}
+
+// Navigation improvements
+.main-nav__link {
+  color: $tulsa-cream !important;
+  
+  &:hover, &:focus {
+    color: $tulsa-gold !important;
+  }
+  
+  &.active {
+    border-bottom-color: $tulsa-gold !important;
+  }
+}
+
+// Process cards with RED accent
+.process-card {
+  border-top: 4px solid $tulsa-red;
+  
+  &:hover {
+    border-top-color: $tulsa-gold;
+  }
+}
+
+// Participation elements
+.participation {
+  .icon {
+    color: $tulsa-gold;
+  }
+}
+
+// Progress bars
+.progress-bar {
+  background-color: $tulsa-cream;
+  
+  .progress-bar__bar {
+    background-color: $tulsa-gold;
+  }
+}
+
+// Votes and endorsements - WHITE text on gold
+.vote-button, .endorsement-button {
+  &:hover, &.active {
+    background-color: $tulsa-gold !important;
+    color: white !important;
+  }
+}
+
+// Comments - RED accent line
+.comment__header {
+  border-left: 3px solid $tulsa-red;
+}
+
+// Tabs - gold underline
+.tabs-title {
+  &.is-active a {
+    border-bottom-color: $tulsa-gold !important;
+    color: $tulsa-blue !important;
+  }
+}
+
+// Callouts with RED for alerts
+.callout {
+  border-left: 4px solid $tulsa-gold;
+  background-color: lighten($tulsa-cream, 2%);
+  
+  &.warning {
+    border-left-color: $tulsa-gold;
+    background-color: lighten($tulsa-gold, 40%);
+  }
+  
+  &.alert {
+    border-left-color: $tulsa-red;
+    background-color: lighten($tulsa-red, 45%);
+  }
+  
+  &.success {
+    border-left-color: #28A745;
+  }
+}
+
+// Badges and labels - WHITE text on gold
+.badge,
+.label,
+.tag {
+  background-color: $tulsa-gold !important;
+  color: white !important;
+}
+
+// Alert/error badges use RED
+.badge--alert,
+.label--alert,
+.badge--error {
+  background-color: $tulsa-red !important;
+  color: white !important;
+}
+
+// Delete/destroy actions use RED
+[class*="delete"],
+[class*="destroy"],
+[class*="remove"] {
+  &.button, &.btn {
+    background-color: $tulsa-red !important;
+    border-color: $tulsa-red !important;
+    color: white !important;
+    
+    &:hover {
+      background-color: darken($tulsa-red, 10%) !important;
+    }
+  }
+}
+
+// Form validation errors - RED
+.is-invalid-input,
+.is-invalid-label,
+.form-error {
+  border-color: $tulsa-red !important;
+  color: $tulsa-red !important;
+}
+
+// Required field indicator - RED
+.required::after,
+label.required::after {
+  color: $tulsa-red !important;
+}
+
+// Notification dots - RED
+.notification-dot,
+.unread-indicator {
+  background-color: $tulsa-red !important;
+}

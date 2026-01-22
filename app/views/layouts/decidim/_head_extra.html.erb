@@ -1,0 +1,206 @@
+<%# TulsaDecides Custom Styles %>
+<style>
+  :root {
+    --tulsa-blue: #162B49;
+    --tulsa-cream: #F8F1E0;
+    --tulsa-gold: #EBAD21;
+    --tulsa-red: #C6202E;
+    --primary: #162B49;
+    --primary-rgb: 22, 43, 73;
+    --secondary: #F8F1E0;
+    --secondary-rgb: 248, 241, 224;
+    --tertiary: #EBAD21;
+    --tertiary-rgb: 235, 173, 33;
+  }
+  
+  /* HERO IMAGE */
+  .hero__container, [id^="hero-"], section[data-process-hero] {
+    background-image: url("/tulsa-hero.jpg") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+  
+  /* HERO TITLE - Cream with blue outline */
+  .hero__title, .hero__container .hero__title, .hero__container h1, .hero h1 {
+    color: #F8F1E0 !important;
+    font-size: 3.5rem !important;
+    -webkit-text-stroke: 2px #162B49;
+    text-stroke: 2px #162B49;
+    paint-order: stroke fill;
+    text-shadow: 2px 2px 0 #162B49, -2px -2px 0 #162B49, 2px -2px 0 #162B49, -2px 2px 0 #162B49, 0 2px 0 #162B49, 0 -2px 0 #162B49, 2px 0 0 #162B49, -2px 0 0 #162B49;
+  }
+  
+  /* HERO CTA BUTTON - Gold bg, WHITE text */
+  #hero-cta, .hero .button, .hero__container .button, .hero .button__secondary, .hero__container .button__secondary {
+    background-color: #EBAD21 !important;
+    background-image: none !important;
+    border-color: #EBAD21 !important;
+    color: white !important;
+    font-weight: 700;
+  }
+  
+  /* HERO CTA HOVER - RED text */
+  #hero-cta:hover, .hero .button:hover, .hero__container .button:hover {
+    background-color: #EBAD21 !important; /* keep gold */
+    /* removed cream bg */
+    background-image: none !important;
+    border-color: #C6202E !important;
+    color: #C6202E !important;
+  }
+  
+  /* Header */
+  header, .main-nav {
+    background-color: var(--tulsa-blue) !important;
+  }
+  
+  /* Title decorator - blue on light, cream on dark */
+  .title-decorator, [class*="title-decorator"] {
+    color: #162B49 !important;
+  }
+  .bg-primary .title-decorator, header .title-decorator, footer .title-decorator {
+    color: #F8F1E0 !important;
+  }
+  
+  /* BUTTONS - Blue background */
+  .button, [type="submit"], .button--primary, button[type="submit"] {
+    background-color: #162B49 !important;
+    border-color: #162B49 !important;
+    color: white !important;
+  }
+  
+  /* BUTTONS HOVER - Gold */
+  .button:hover, [type="submit"]:hover, .button--primary:hover, button[type="submit"]:hover {
+    background-color: #EBAD21 !important;
+    border-color: #EBAD21 !important;
+    color: white !important;
+  }
+  
+  /* Tertiary/Gold buttons */
+  .button--tertiary, .bg-tertiary, .bg-warning, .badge, .label, .tag {
+    background-color: #EBAD21 !important;
+    color: white !important;
+  }
+  
+  /* Secondary buttons */
+  .button--secondary {
+    /* removed cream bg */
+    border-color: #162B49 !important;
+    color: #162B49 !important;
+  }
+  
+  /* Red accents */
+  .button--alert, .button--danger, .flash--alert, .error {
+    background-color: #C6202E !important;
+    color: white !important;
+  }
+  .text-alert, .text-error, .required, .form-error {
+    color: #C6202E !important;
+  }
+  
+  /* Links */
+  a { color: #162B49; }
+  a:hover { color: #EBAD21; }
+  
+  /* Footer */
+  footer, .main-footer {
+    background-color: #162B49 !important;
+    color: #F8F1E0 !important;
+  }
+  footer a, .main-footer a { color: #F8F1E0 !important; }
+  footer a:hover, .main-footer a:hover { color: #EBAD21 !important; }
+  
+  /* Flash messages */
+  .flash--success { background-color: #28A745 !important; color: white !important; }
+  .flash--warning { background-color: #EBAD21 !important; color: white !important; }
+  .flash--error, .flash--alert { background-color: #C6202E !important; color: white !important; }
+  
+  ::selection { background-color: #EBAD21; color: white; }
+  
+  /* Mobile hero title */
+  @media (max-width: 768px) {
+    .hero__title, .hero__container .hero__title, .hero__container h1, .hero h1 {
+      font-size: 2rem !important;
+      line-height: 1.3 !important;
+    }
+  }
+  @media (max-width: 480px) {
+    .hero__title, .hero__container .hero__title, .hero__container h1, .hero h1 {
+      font-size: 1.5rem !important;
+      line-height: 1.4 !important;
+      -webkit-text-stroke: 1px #162B49;
+      text-stroke: 1px #162B49;
+    }
+  }
+</style>
+
+<style>
+  /* Search button - gold background */
+  #input-search .button,
+  #input-search [type="submit"],
+  #input-search button,
+  [id*="search"] .button,
+  .search button,
+  .search [type="submit"] {
+    background-color: #EBAD21 !important;
+    border-color: #EBAD21 !important;
+    color: #162B49 !important;
+  }
+</style>
+
+<style>
+  /* Search icon - make SVG white */
+  #input-search svg,
+  #input-search .icon,
+  [id*="search"] svg,
+  [id*="search"] .icon,
+  .search svg,
+  .search .icon,
+  button[type="submit"] svg,
+  .button svg {
+    fill: white !important;
+    stroke: white !important;
+    color: white !important;
+  }
+</style>
+
+<style>
+  /* Breadcrumb dropdown trigger */
+  .menu-bar__breadcrumb-desktop__dropdown-trigger,
+  .menu-bar__breadcrumb-desktop__dropdown-trigger * {
+    color: white !important;
+  }
+  .menu-bar__breadcrumb-desktop__dropdown-trigger:hover,
+  .menu-bar__breadcrumb-desktop__dropdown-trigger:hover * {
+    color: #EBAD21 !important;
+  }
+</style>
+
+<style>
+  /* Title decorator on pages - force blue */
+  .title-decorator.inline-block,
+  .title-decorator.text-left,
+  main .title-decorator,
+  .content .title-decorator,
+  #content .title-decorator,
+  .wrapper .title-decorator {
+    color: #162B49 !important;
+  }
+</style>
+
+<style>
+  /* Mobile breadcrumb - white text, gold on hover/active */
+  .menu-bar__breadcrumb-mobile__dropdown-trigger,
+  .menu-bar__breadcrumb-mobile__dropdown-trigger a,
+  .menu-bar__breadcrumb-mobile__dropdown-trigger span,
+  .menu-bar__breadcrumb-item {
+    color: white !important;
+  }
+  .menu-bar__breadcrumb-mobile__dropdown-trigger:hover,
+  .menu-bar__breadcrumb-mobile__dropdown-trigger:hover a,
+  .menu-bar__breadcrumb-mobile__dropdown-trigger a:hover,
+  .menu-bar__breadcrumb-item:hover,
+  .menu-bar__breadcrumb-item:active,
+  .menu-bar__breadcrumb-item:focus {
+    color: #EBAD21 !important;
+  }
+</style>
