@@ -233,3 +233,30 @@
     padding-bottom: 1rem !important;
   }
 </style>
+
+<!-- Budget Page Content Injection -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (window.location.pathname === "/pages/tulsa-municipal-budget") {
+    var contentArea = document.querySelector(".page__container");
+    if (contentArea) {
+      fetch("/tulsa-budget/full-page.html")
+        .then(function(response) { return response.text(); })
+        .then(function(html) {
+          contentArea.innerHTML = html;
+          var chartScript = document.createElement("script");
+          chartScript.src = "https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js";
+          chartScript.onload = function() {
+            var inlineScripts = contentArea.querySelectorAll("script:not([src])");
+            inlineScripts.forEach(function(s) {
+              var newScript = document.createElement("script");
+              newScript.textContent = s.textContent;
+              document.body.appendChild(newScript);
+            });
+          };
+          document.head.appendChild(chartScript);
+        });
+    }
+  }
+});
+</script>
